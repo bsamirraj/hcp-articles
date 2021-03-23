@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
 const db = require('./config/database')
 
-const HcpArticles = db.ppiConnector.define('hcp_articles', {
+const HcpArticles = db.define('hcp_articles', {
     id: {
         allowNull: false,
         primaryKey: true,
@@ -41,7 +41,7 @@ const HcpArticles = db.ppiConnector.define('hcp_articles', {
         type: DataTypes.STRING
     }
 }, {
-    schema: `${nodecache.getValue('ppi')}`,
+    schema: `ppi`,
     tableName: 'hcp_articles',
     timestamps: true,
     createdAt: 'created_at',
