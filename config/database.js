@@ -1,7 +1,8 @@
 const { Sequelize } = require('sequelize');
+const dotenv = require('dotenv');
+dotenv.config();
 
-
-module.exports = new Sequelize('ppi-dev', 'postgres', 'Abcd1234!', {
+module.exports = new Sequelize(process.env.DATABASE_URL, {
   host: 'localhost',
   dialect: 'postgres'
 });
